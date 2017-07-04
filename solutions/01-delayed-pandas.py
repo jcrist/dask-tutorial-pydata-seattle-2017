@@ -5,7 +5,7 @@ for fn in filenames:
     df = delayed(pd.read_csv)(fn)
     
     # Groupby origin airport
-    by_origin = delayed(df.groupby)('Origin')
+    by_origin = df.groupby('Origin')
     
     # Sum of all departure delays by origin
     total = by_origin.DepDelay.sum()
